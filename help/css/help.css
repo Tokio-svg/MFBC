@@ -1,0 +1,146 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+main {
+    width: 60vw;
+    min-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.right {
+    text-align: right;
+}
+
+h1 {
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 15px 0;
+    color: rgb(44, 182, 150);
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+ul {
+    list-style: decimal;
+    padding-top: 10px;
+    padding-left: 40px;
+}
+
+ul li {
+    padding-bottom: 5px;
+}
+
+/* .paragraph-block {
+    margin: 40px 0;
+} */
+
+.div-line {
+    margin: 40px 0;
+    padding: 1px 0;
+    background-color: rgb(200, 208, 215);
+}
+
+/* フローチャート */
+:root {
+    --flowchart-size: 30px;
+    /* 番号のサイズ 変更可 */
+    --flowchart-border: 5px;
+    /* 縦線太さ 変更可 */
+}
+
+.flowchart {
+    list-style: none !important;
+    counter-reset: flownum;
+    /* リストアイテムの名称(任意) */
+    margin: 1em 0;
+    /* フローチャートと前後要素との距離(任意) */
+    /* padding: 0 !important; */
+    padding-left: 60px;
+}
+
+.flowchart li {
+    position: relative;
+    padding: 0 0 2em calc(var(--flowchart-size) + 6px);
+    /* 6px がタイトルとの距離であり余白 */
+}
+
+/* 番号部位デザイン */
+.flowchart li::before {
+    content: counter(flownum);
+    counter-increment: flownum;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -5px;
+    /* 通常は 0, 横に並ぶタイトルとのバランスを見て調整 */
+    left: 0;
+    z-index: 2;
+    width: var(--flowchart-size);
+    height: var(--flowchart-size);
+    border-radius: 50%;
+    /* 番号円形, 四角形で良ければこの一行削除 */
+    background: rgb(44, 182, 150);
+    /* 番号背景 */
+    color: white;
+    /* 番号文字色 */
+}
+
+/* 縦線部位デザイン */
+.flowchart li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: calc(var(--flowchart-size) / 2 - calc(var(--flowchart-border) / 2));
+    z-index: 1;
+    width: var(--flowchart-border);
+    height: 100%;
+    background: rgb(200, 200, 200);
+    /* 線の色 */
+}
+
+/* 工程タイトル */
+.flowchart-title {
+    margin: 0 0 .6em;
+    font-weight: bold;
+    font-size: 1.04em;
+    line-height: 1.4;
+    color: yellow;
+    /* 大きめの文字は 1.2 〜 1.4 程度で調整すると良い */
+}
+
+/* 最終工程の縦線が必要な方ここから削除 */
+.flowchart li:last-of-type::after {
+    content: none;
+}
+
+/* 最終工程の縦線が必要な方ここまで削除 */
+
+/* p要素を利用した場合の調整 */
+.flowchart li p {
+    margin: 1em 0 !important;
+}
+
+.flowchart li p:last-of-type {
+    margin-bottom: 0 !important;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MFBCシミュレータ（仮）</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/help.css">
+</head>
+
+<body>
+    <main>
+        <!-- タイトル -->
+        <div>
+            <h1>MFBCシミュレータ（仮）説明書</h1>
+            <p class="right">Updated: 2026/06/11</p>
+        </div>
+        <!-- 概要 -->
+        <div>
+            <h2>【概要】</h2>
+            <p>モンスターファームバトルカードを勝手に再現。</p>
+            <p>怒られたら消します。</p>
+            <p>※PC限定、Chromeでのみ動作確認。</p>
+        </div>
+        <div class="div-line"></div>
+        <!-- デッキルール -->
+        <div>
+            <h2>【デッキルール】</h2>
+            <p>モンスターカード：3枚（重複不可）</p>
+            <p>技カード枚数：50枚</p>
+            <p>同名技カード：3枚まで</p>
+        </div>
+        <div class="div-line"></div>
+        <!-- ターンの流れフローチャート -->
+        <h2>【ゲームの流れ】</h2>
+        <div class="flowchart-container">
+            <h3>セットアップ</h3>
+            <ol class="flowchart">
+                <li>
+                    <div class="flowchart-content">
+                        <div class="flowchart-title">ゲーム開始</div>
+                        <p>・互いに山札から5枚のカードを引きます</p>
+                        <p>※先行、後攻は自動的に決定されます</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="flowchart-content">
+                        <div class="flowchart-title">後攻プレイヤーガッツステップ</div>
+                        <p>・後攻プレイヤーはゲーム開始直後に手札を2枚までガッツにする事ができます</p>
+                    </div>
+                </li>
+            </ol>
+            <h3>ターンの流れ</h3>
+            <ol class="flowchart">
+                <li>
+                    <div class="flowchart-content">
+                        <div class="flowchart-title">ドローステップ</div>
+                        <p>・手札が5枚になるまで山札からカードを引きます</p>
+                        <p>・既に手札が5枚の場合は山札の上から1枚をガッツにします</p>
+                        <p>※先行プレイヤーの最初のドローステップはスキップされます</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="flowchart-content">
+                        <div class="flowchart-title">攻撃ステップ</div>
+                        <p>・攻撃側のプレイヤーは必要な分のガッツを捨て札に送る事で技カードを使用します</p>
+                        <p>・攻撃ステップで使用可能なカードは「ちから技」「かしこさ技」「特殊技」「全体カード」のみ</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="flowchart-content">
+                        <div class="flowchart-title">守備ステップ</div>
+                        <p>・守備側のプレイヤーは相手の攻撃に対して守備技（回避技、防御技）を使用する事ができます</p>
+                        <p>・守備技は一回の攻撃に対して何枚でも使用する事ができます</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="flowchart-content">
+                        <div class="flowchart-title">ガッツステップ</div>
+                        <p>・手札を好きな数だけ選択してガッツにします</p>
+                        <p>・ガッツステップ終了後、相手プレイヤーにターンが渡ります</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div>
+            <h2>【勝利条件】</h2>
+            <p>ターンを交互に繰り返し、以下の条件を満たすことで勝利となります</p>
+            <ul>
+                <li>全ての相手モンスターのライフを0（KO）にする</li>
+                <li>相手プレイヤーがドローステップ、カード効果で定められた枚数のカードを山札から引くことができない</li>
+            </ul>
+        </div>
+        <div class="div-line"></div>
+        <!-- カードの見かた -->
+        <div>
+            <h2>【カード説明】</h2>
+            <h3>モンスターカード</h3>
+            <!-- モンスターカード画像 -->
+            <!-- <img src="image/ホーム画面.png" alt="ホーム画面"> -->
+            <div class="paragraph-block">
+                <p></p>
+                <p></p>
+            </div>
+            <h3>技カード</h3>
+            <!-- 技カード画像 -->
+            <!-- <img src="image/対戦画面.png" alt="対戦画面"> -->
+            <div class="paragraph-block">
+                <p>各モンスターの技カード</p>
+                <p>全モンスターカード</p>
+                <p>ブリーダーカード</p>
+            </div>
+            <h3>アイコン説明</h3>
+            <p>原作と異なり、カード種別は以下のアイコンで表記しています。</p>
+            <div class="paragraph-block">
+                <div>
+                    <h4>ちから技</h4>
+                    <img src="img/Power_Icon.png" alt="ちから技アイコン">
+                </div>
+                <div>
+                    <h4>かしこさ技</h4>
+                    <img src="img/Int_Icon.png" alt="かしこさ技アイコン">
+                </div>
+                <div>
+                    <h4>特殊技</h4>
+                    <img src="img/Special_Icon.png" alt="特殊技アイコン">
+                </div>
+                <div>
+                    <h4>回避技</h4>
+                    <img src="img/Avoid_Icon.png" alt="回避技アイコン">
+                </div>
+                <div>
+                    <h4>防御技</h4>
+                    <img src="img/Defense_Icon.png" alt="防御技アイコン">
+                </div>
+                <div>
+                    <h4>全体カード</h4>
+                    <img src="img/Field_Icon.png" alt="全体カードアイコン">
+                </div>
+            </div>
+        </div>
+        <div class="div-line"></div>
+        <!-- 対戦画面説明 -->
+        <div>
+            <h2>【対戦画面説明】</h2>
+        </div>
+        <div class="div-line"></div>
+        <!-- デッキ編成画面説明 -->
+        <div>
+            <h2>【デッキ編成画面説明】</h2>
+        </div>
+
+        <div class="div-line"></div>
+        <div>
+            <p>©コーエーテクモゲームス All rights reserved.</p>
+        </div>
+    </main>
+</body>
+
+</html>
